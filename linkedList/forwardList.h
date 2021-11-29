@@ -14,15 +14,15 @@ class Node
 class ForwardList
 {
     public:         
-        ForwardList(); // construct an empty forwardlist
-        Node* begin(); // return a pointer pointing at head
-        void printList(); // print all values of the nodes
-        void insertAtFront(int); // insert a new node at front
-        void insertAtRear(int); // insert a new node at rear
-        void reverse(); // reverse this list 
-        Node*& insertAfter(Node*&, int); // insert a new node after previous one, return the pointer just at new node
-        Node*& deleteHere(Node*&); // delete node to which the pointer is pointing, return the pointer forward to the node's next
-        Node*& next(Node*&); // return the pointer pushed to the next node
+        ForwardList(); 
+        Node* begin(); 
+        void printList();
+        void insertAtFront(int); 
+        void insertAtRear(int);
+        void reverse();
+        Node*& insertAfter(Node*&, int); 
+        Node*& deleteHere(Node*&);
+        Node*& next(Node*&); 
     private:
         Node* head;
 };

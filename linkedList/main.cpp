@@ -3,12 +3,12 @@
 
 using namespace std;
 
-
-
 int main()
 {
+    // instantiate a forward list
     ForwardList myList;
 
+    // test functionalities
     for(int i = 0; i < 10; i++)
     {
         myList.insertAtFront(i);

@@ -2,6 +2,7 @@
 #include "forwardList.h"
 using namespace std;
 
+
 Node::Node(int value):value(value){}
 
 void Node::setValue(int value)
@@ -14,16 +15,25 @@ void Node::setNext(Node* next)
         this->next = next;
 }   
 
+/*
+    construct an empty forwardlist
+*/
 ForwardList::ForwardList()
 {
     head = NULL;
 }
 
+/*
+    return a pointer pointing at head
+*/
 Node* ForwardList::begin()
 {
     return head;
 }
 
+/*
+    print all values of the nodes
+*/
 void ForwardList::printList()
 {
     Node* ptr = head;
@@ -34,6 +44,9 @@ void ForwardList::printList()
     }
 }
 
+/*
+    insert a new node at front
+*/
 void ForwardList::insertAtFront(int value)
 {
     Node* newNode = new Node(value);
@@ -41,6 +54,9 @@ void ForwardList::insertAtFront(int value)
     head = newNode;
 }
 
+/*
+    insert a new node at rear
+*/
 void ForwardList::insertAtRear(int value)
 {
     Node* newNode = new Node(value);
@@ -58,6 +74,9 @@ void ForwardList::insertAtRear(int value)
     ptr->setNext(newNode);
 }
 
+/*
+    reverse this list 
+*/
 void ForwardList::reverse()
 {
     Node* ptr1 = NULL;
@@ -73,6 +92,9 @@ void ForwardList::reverse()
     head = ptr1;
 }
 
+/*
+    insert a new node after previous one, return the pointer just at new node
+*/
 Node*& ForwardList::insertAfter(Node*& previous, int value)
 {
     if(previous == NULL)
@@ -87,6 +109,9 @@ Node*& ForwardList::insertAfter(Node*& previous, int value)
     return previous;
 }
 
+/*
+    delete node to which the pointer is pointing, return the pointer forward to the node's next
+*/
 Node*& ForwardList::deleteHere(Node*& here) 
 {
     if(here == NULL)
@@ -114,6 +139,9 @@ Node*& ForwardList::deleteHere(Node*& here)
     return here;
 }
 
+/*
+    return the pointer pushed to the next node
+*/
 Node*& ForwardList::next(Node*& position)
 {
     if(position != NULL && position->getNext() != NULL)

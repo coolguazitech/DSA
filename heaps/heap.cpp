@@ -39,7 +39,9 @@ Heap::Heap(vector<int>::const_iterator from, vector<int>::const_iterator to, boo
     buildHeap(reverse);
 }
     
-
+/*
+    swap two elements' references
+*/
 void Heap::swap (int& i, int& j)
 {
     int temp = i;
@@ -47,6 +49,9 @@ void Heap::swap (int& i, int& j)
     j = temp;
 }
 
+/*
+    do max heapifying on the subtree rooted with root
+*/
 void Heap::maxHeapify(vector<int>& m_arr, int root)
 {
     if(root * 2 <= m_size && root * 2 + 1 <= m_size)
@@ -75,6 +80,9 @@ void Heap::maxHeapify(vector<int>& m_arr, int root)
     }
 }
 
+/*
+    do min heapifying on the subtree rooted with root
+*/
 void Heap::minHeapify(vector<int>& m_arr, int root)
 {
     if(root * 2 <= m_size && root * 2 + 1 <= m_size)
@@ -103,6 +111,9 @@ void Heap::minHeapify(vector<int>& m_arr, int root)
     }
 }
 
+/*
+    rearrange elements into a heap
+*/
 void Heap::buildHeap(bool reverse)
 {
     for(int i = m_size / 2; i >= 1; --i)
@@ -111,11 +122,18 @@ void Heap::buildHeap(bool reverse)
     }
 }
 
+/*
+    check if this is an empty heap
+*/
 bool Heap::empty()
 {
     return m_size == 0;
 }
 
+
+/*
+    add a new element into this heap
+*/
 void Heap::push(const int& x)
 {
     m_arr.push_back(x);
@@ -142,6 +160,9 @@ void Heap::push(const int& x)
     }
 }
 
+/*
+    return the first element of this heap
+*/
 int Heap::top()
 {
     if(m_size == 0)
@@ -154,6 +175,10 @@ int Heap::top()
     }
 }
 
+
+/*
+    pop the first element of this heap, and maintain it to be a heap again
+*/
 void Heap::pop()
 {
     if(m_size == 0)
@@ -178,6 +203,9 @@ void Heap::pop()
     }
 }
 
+/*
+    print the current heap elements
+*/
 void Heap::printHeapAsVector()
 {
     for(int i = 1; i <= m_size; i++)
